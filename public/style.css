@@ -1,47 +1,52 @@
-@font-face{
+@font-face {
     font-family: Arbutus;
     src: url("./fonts/Arbutusregular.ttf");
 }
 
-@font-face{
+@font-face {
     font-family: Amatic;
     src: url("./fonts/AmaticSC-Regular.ttf");
 }
 
-@font-face{
+@font-face {
     font-family: Welcome;
     src: url("./fonts/Welcome.ttf");
 }
 
-@font-face{
+@font-face {
     font-family: Abel;
     src: url("./fonts/Abel.ttf");
 }
 
-@font-face{
+@font-face {
     font-family: Abhayalibre;
     src: url("fonts/abhayalibre-extrabold.ttf");
 }
 
-html, body{
+html,
+body {
     padding: 0;
     margin: 0;
     border: 0;
 }
 
-body{
-    background: #bfbfbf url(img/background1.png) repeat-y;
+body {
+    background: #bfbfbf url(img/background.png) repeat-y;
     font-family: Abel, sans-serif;
 }
 
-header{
+.invisible {
+    display: none;
+}
+
+header {
     height: 577px;
     width: 100%;
     background: url(img/cat.png) right top no-repeat;
     margin: 0;
 }
 
-h1{
+h1 {
     margin: 0;
     font-family: Arbutus, sans-serif;
     color: rgba(35, 55, 74, 0.8);
@@ -49,90 +54,140 @@ h1{
     text-align: right;
 }
 
-.promo{
+.promo {
     font-family: Amatic, serif;
     font-size: 45pt;
-
     width: 600px;
     text-align: right;
 }
 
-.content{
+.content {
     margin: 0 25px;
     height: 100%;
-
     display: flex;
     flex-direction: column-reverse;
 }
 
-h2{
+h2 {
     font-family: Welcome, serif;
     font-size: 35pt;
     text-align: center;
 }
 
-.block{
+.block {
     margin-top: 200px;
     margin-left: 25px;
     margin-right: 25px;
 }
 
-.features{
+.carousel {
+    max-width: 1390px;
+    position: relative;
+}
+
+.carousel-hider {
+    overflow: hidden;
+    margin: 0 80px;
+}
+
+.carousel-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-element {
+    margin-right: 100px;
+}
+
+.carousel-element:last-child {
+    margin-right: 0;
+}
+
+.carousel-element img {
+    width: 250px;
+    height: 350px;
+}
+
+.carousel-big img {
+    width: 450px;
+    height: 500px;
+}
+
+.arrow {
+    width: 64px;
+    height: 40px;
+    background-color: #4B5B6B;
+    position: absolute;
+    top: 250px;
+}
+
+.arrow:disabled {
+    background-color: red;
+}
+
+.arrow.right {
+    right: 0;
+}
+
+.arrow.left {
+    left: 0;
+}
+
+.features {
     flex-direction: row;
     justify-content: space-around;
 }
 
-.feature{
+.feature {
     width: 290px;
 }
 
-.feature h3, .feature p{
+.feature h3,
+.feature p {
     text-align: center;
     font-size: 30px;
 }
 
-.feedback-list{
+.feedback-list {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
     list-style-type: none;
     margin: 0;
     margin-top: 50px;
     padding: 0;
-
     font-size: 20px;
 }
 
-.feedback-item{
+.feedback-item {
     margin-right: 40px;
     padding: 40px;
     padding-top: 70px;
     padding-bottom: 10px;
     position: relative;
-
     background-image: url("img/feedbackBackground.png");
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
-
     display: flex;
     flex-direction: column;
 }
 
-.feedback-item::before{
+.feedback-item::before {
     content: "“";
     position: absolute;
     top: 0;
-
     font-size: 150px;
     font-family: Abhayalibre, serif;
     color: rgba(35, 55, 74, 0.8);
 }
 
-.feedback-item:last-child{
+.feedback-item:last-child {
     margin-right: 0;
 }
 
-.feedback-item .author{
+.feedback-item .author {
     color: rgba(35, 55, 74, 0.8);
     font-weight: bold;
     font-family: Abhayalibre, serif;
@@ -140,16 +195,64 @@ h2{
     text-align: right;
 }
 
-.feedback-item .date{
+.feedback-item .date {
     text-align: right;
     font-size: 15px;
 }
 
-.question-form{
+.question-form {
     margin-left: auto;
     margin-right: 25px;
     padding: 5px 36px;
-
     background-image: url("img/feedbackBackground.png");
-    width: 528px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+    width: 405px;
+}
+
+.question-form p {
+    font-family: Abhayalibre;
+    font-size: 45px;
+    line-height: 70px;
+    font-weight: 800;
+    color: rgba(35, 55, 74, 0.8);
+}
+
+.question-form input {
+    padding: 5px;
+    margin-bottom: 30px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #202138;
+    width: 390px;
+    color: rgba(35, 55, 74, 0.8);
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Abhayalibre;
+}
+
+.question-form ::placeholder {
+    color: rgba(35, 55, 74, 0.4);
+    font-size: 15px;
+}
+
+.question-form textarea {
+    background-color: #c4c4c4;
+    border: 2px solid #202138;
+    color: rgba(35, 55, 74, 0.4);
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Abhayalibre;
+    width: 390px;
+    height: 150px;
+    padding: 5px;
+}
+
+.question-form .submit {
+    margin-top: 20px;
+    width: 100%;
+    height: 55px;
+    border: none;
+    background-color: rgba(35, 55, 74, 0.8);
+    color: #ffffff;
+    font-size: 15px;
 }
